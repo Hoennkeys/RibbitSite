@@ -2,6 +2,7 @@ import { Navbar } from '../components/Navbar';
 import { Hero } from '../components/Hero';
 import { ScreensCarousel } from '../components/ScreensCarousel';
 import { TechSection } from '../components/TechSection';
+import { ChatSection } from '../components/ChatSection';
 
 export default function Home() {
   const handleCtaClick = () => {
@@ -19,8 +20,11 @@ export default function Home() {
       {/* ScreensCarousel Component */}
       <ScreensCarousel />
 
-      {/* Seção de Tecnologia Integrada ao Campo (Holograma + Overlay) */}
+      {/* Seção de Tecnologia Integrada ao Campo (Sound ID + Sapo + Celular) */}
       <TechSection />
+
+      {/* Seção do Chat Científico (Comunidade + Sapo Red-eyed + Celular) */}
+      <ChatSection />
     </div>
   );
 }
