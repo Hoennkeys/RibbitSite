@@ -1,0 +1,135 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   Ribbit Design System — CSS Variables & Core Utility Tokens
+   Location: c:/RibbitSite/src/styles/tokens.css
+   ───────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* --- Cores (Theme Colors) --- */
+  --color-background: #030712;      /* Cinza-preto ultra profundo */
+  --color-surface: #0f172a;         /* Fundo de cartões Bento Grid */
+  --color-primary: #34c759;         /* Verde Bioacústico Neon (Apple Green) */
+  --color-primary-rgb: 52, 199, 89; /* Canal RGB para verde */
+  --color-accent: #0071e3;          /* Azul Tecnologia (Apple Blue) */
+  --color-accent-rgb: 0, 113, 227;  /* Canal RGB para azul */
+  --color-purple: #8b5cf6;          /* Roxo Cyber para glows de preenchimento */
+  --color-purple-rgb: 139, 92, 246; /* Canal RGB para roxo */
+  --color-highlight: #f9fafb;       /* Branco gelo brilhante para textos */
+  --color-text-secondary: #86868b;  /* Cinza secundário para descrições */
+  --color-border: #1e293b;          /* Cinza sutil para grades e contornos */
+
+  /* --- Tipografia (Typography) --- */
+  --font-family-title: "Plus Jakarta Sans", "Syne", system-ui, -apple-system, sans-serif;
+  --font-family-body: "Geist Sans", "Inter", system-ui, -apple-system, sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+
+  --letter-spacing-condensed: -0.04em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-expanded: 0.05em;
+
+  /* --- Espaçamento (Spacing Scale) --- */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  --spacing-4xl: 6rem;
+
+  /* --- Border Radius --- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* --- Sombras (Shadows Scale) --- */
+  --shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --shadow-neon-primary: 0 0 20px rgba(var(--color-primary-rgb), 0.25);
+  --shadow-neon-primary-hover: 0 0 30px rgba(var(--color-primary-rgb), 0.45);
+  --shadow-neon-accent: 0 0 20px rgba(var(--color-accent-rgb), 0.25);
+  --shadow-neon-accent-hover: 0 0 30px rgba(var(--color-accent-rgb), 0.45);
+
+  /* --- Blur --- */
+  --blur-sm: 4px;
+  --blur-md: 8px;
+  --blur-lg: 16px;
+  --blur-xl: 24px;
+
+  /* --- Glassmorphism Composite --- */
+  --glass-background: rgba(15, 23, 42, 0.65);
+  --glass-border: 1px solid rgba(249, 250, 251, 0.08);
+  --glass-backdrop-filter: blur(24px);
+
+  /* --- Glow Backdrops (radial-gradient ambient auras) --- */
+  --glow-radial-primary: radial-gradient(circle, rgba(var(--color-primary-rgb), 0.15) 0%, rgba(3, 7, 18, 0) 70%);
+  --glow-radial-accent: radial-gradient(circle, rgba(var(--color-accent-rgb), 0.15) 0%, rgba(3, 7, 18, 0) 70%);
+  --glow-radial-purple: radial-gradient(circle, rgba(var(--color-purple-rgb), 0.15) 0%, rgba(3, 7, 18, 0) 70%);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Basic Styles for Glow and Glassmorphism Utilities
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.card-glass {
+  background: var(--glass-background);
+  border: var(--glass-border);
+  backdrop-filter: var(--glass-backdrop-filter);
+  -webkit-backdrop-filter: var(--glass-backdrop-filter);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
+}
+
+.glow-bg-primary {
+  background: var(--glow-radial-primary);
+}
+
+.glow-bg-accent {
+  background: var(--glow-radial-accent);
+}
+
+.glow-bg-purple {
+  background: var(--glow-radial-purple);
+}
+
+.btn-neon-primary {
+  background-color: var(--color-primary);
+  color: var(--color-highlight);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-neon-primary);
+  transition: all 0.2s ease-out;
+}
+
+.btn-neon-primary:hover {
+  box-shadow: var(--shadow-neon-primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-neon-accent {
+  background-color: var(--color-accent);
+  color: var(--color-highlight);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-neon-accent);
+  transition: all 0.2s ease-out;
+}
+
+.btn-neon-accent:hover {
+  box-shadow: var(--shadow-neon-accent-hover);
+  transform: translateY(-2px);
+}
