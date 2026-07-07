@@ -76,6 +76,30 @@ export const translations: Record<LanguageCode, any> = {
       privacy: 'Privacidade',
       security: 'Segurança de Dados',
       copyright: '© 2026 Ribbit Project. Inspirado no Merlin Bird ID. Desenvolvido para catalogação científica.'
+    },
+    contact: {
+      title: 'Entre em Contato',
+      subtitle: 'Fale com nossa equipe de herpetólogos, desenvolvedores e coordenadores científicos.',
+      name: 'Nome Completo',
+      email: 'Endereço de E-mail',
+      subject: 'Assunto da Mensagem',
+      message: 'Escreva sua mensagem...',
+      submit: 'Enviar Mensagem ✉️',
+      success: 'Obrigado! Sua mensagem foi enviada com sucesso e nossa equipe responderá em breve.'
+    },
+    donate: {
+      title: 'Apoie a Pesquisa Herpetológica',
+      subtitle: 'Ajude-nos a manter servidores, expandir o Sound ID e financiar expedições científicas pelo Brasil.',
+      tier1_title: 'Entusiasta',
+      tier1_desc: 'Ajuda a manter a infraestrutura de servidores e os bancos de dados bioacústicos ativos.',
+      tier2_title: 'Pesquisador',
+      tier2_desc: 'Financia a validação taxonômica manual de cantos feita por acadêmicos herpetólogos.',
+      tier3_title: 'Protetor',
+      tier3_desc: 'Apoia diretamente expedições de gravação sonora e mapeamento em áreas de preservação.',
+      method: 'Selecione o Método de Apoio',
+      pix: 'PIX (Código Simulado)',
+      card: 'Cartão de Crédito',
+      btn: 'Confirmar Contribuição 🐸'
     }
   },
   en: {
@@ -137,6 +161,30 @@ export const translations: Record<LanguageCode, any> = {
       privacy: 'Privacy',
       security: 'Data Security',
       copyright: '© 2026 Ribbit Project. Inspired by Merlin Bird ID. Developed for scientific cataloging.'
+    },
+    contact: {
+      title: 'Get in Touch',
+      subtitle: 'Speak with our team of herpetologists, developers, and scientific coordinators.',
+      name: 'Full Name',
+      email: 'Email Address',
+      subject: 'Message Subject',
+      message: 'Write your message...',
+      submit: 'Send Message ✉️',
+      success: 'Thank you! Your message has been sent successfully and our team will respond soon.'
+    },
+    donate: {
+      title: 'Support Herpetological Research',
+      subtitle: 'Help us maintain servers, expand Sound ID, and fund scientific expeditions across Brazil.',
+      tier1_title: 'Enthusiast',
+      tier1_desc: 'Helps keep the server infrastructure and bioacoustic databases active.',
+      tier2_title: 'Researcher',
+      tier2_desc: 'Funds manual taxonomic validation of calls made by academic herpetologists.',
+      tier3_title: 'Protector',
+      tier3_desc: 'Directly supports sound recording and mapping expeditions in preservation areas.',
+      method: 'Select Support Method',
+      pix: 'PIX (Simulated Code)',
+      card: 'Credit Card',
+      btn: 'Confirm Contribution 🐸'
     }
   },
   es: {
@@ -198,6 +246,30 @@ export const translations: Record<LanguageCode, any> = {
       privacy: 'Privacidad',
       security: 'Seguridad de Datos',
       copyright: '© 2026 Ribbit Project. Inspirado en Merlin Bird ID. Desarrollado para catalogación científica.'
+    },
+    contact: {
+      title: 'Póngase en Contacto',
+      subtitle: 'Hable con nuestro equipo de herpetólogos, desarrolladores y coordinadores científicos.',
+      name: 'Nombre Completo',
+      email: 'Correo Electrónico',
+      subject: 'Asunto del Mensaje',
+      message: 'Escriba su mensaje...',
+      submit: 'Enviar Mensaje ✉️',
+      success: '¡Gracias! Su mensaje fue enviado con éxito y nuestro equipo responderá pronto.'
+    },
+    donate: {
+      title: 'Apoye la Investigación Herpetológica',
+      subtitle: 'Ayúdenos a mantener servidores, expandir Sound ID y financiar expediciones científicas por Brasil.',
+      tier1_title: 'Entusiasta',
+      tier1_desc: 'Ayuda a mantener activa la infraestructura del servidor y las bases de datos bioacústicas.',
+      tier2_title: 'Investigador',
+      tier2_desc: 'Financia la validación taxonómica manual de cantos realizada por herpetólogos académicos.',
+      tier3_title: 'Protector',
+      tier3_desc: 'Apoya directamente expediciones de grabación y mapeo de sonido en áreas de conservación.',
+      method: 'Seleccione el Método de Apoyo',
+      pix: 'PIX (Código Simulado)',
+      card: 'Tarjeta de Crédito',
+      btn: 'Confirmar Contribución 🐸'
     }
   },
   fr: {
@@ -219,7 +291,7 @@ export const translations: Record<LanguageCode, any> = {
     carousel: {
       tag: 'Galerie de l’App',
       title: 'Découvrez l’interface Ribbit',
-      subtitle: 'Explorez les principaux écrans développés sous l’esthétique à haut contraste du temps du système de conception.',
+      subtitle: 'Explorez les principaux écrans développés sous l’esthétique à haut contraste du système de conception.',
       slides: [
         { title: 'Tableau de bord', description: 'Suivez les dernières découvertes d’amphibiens et les actualités scientifiques de la communauté.' },
         { title: 'Sound ID', description: 'Enregistrez le chant et comparez la signature bioacoustique de l’amphibien en temps réel.' },
@@ -259,6 +331,30 @@ export const translations: Record<LanguageCode, any> = {
       privacy: 'Confidentialité',
       security: 'Sécurité des données',
       copyright: '© 2026 Projet Ribbit. Inspiré par Merlin Bird ID. Développé pour le catalogage scientifique.'
+    },
+    contact: {
+      title: 'Contactez-nous',
+      subtitle: 'Discutez avec notre équipe d\'herpétologues, de développeurs et de coordinateurs scientifiques.',
+      name: 'Nom Complet',
+      email: 'Adresse e-mail',
+      subject: 'Objet du Message',
+      message: 'Écrivez votre message...',
+      submit: 'Envoyer Message ✉️',
+      success: 'Merci ! Votre message a été envoyé avec succès et notre équipe vous répondra bientôt.'
+    },
+    donate: {
+      title: 'Soutenir la Recherche Herpétologique',
+      subtitle: 'Aidez-nous à entretenir les serveurs, à développer Sound ID et à financer des expéditions scientifiques au Brésil.',
+      tier1_title: 'Enthousiaste',
+      tier1_desc: 'Aide à maintenir active l\'infrastructure des serveurs et les bases de données bioacoustiques.',
+      tier2_title: 'Chercheur',
+      tier2_desc: 'Finance la validation taxonomique manuelle des chants effectuée par des herpétologues universitaires.',
+      tier3_title: 'Protecteur',
+      tier3_desc: 'Soutient directement les expéditions d\'enregistrement et de cartographie sonore dans les zones de conservation.',
+      method: 'Sélectionnez le mode de soutien',
+      pix: 'PIX (Code Simulé)',
+      card: 'Carte de crédit',
+      btn: 'Confirmer la contribution 🐸'
     }
   },
   it: {
@@ -320,6 +416,30 @@ export const translations: Record<LanguageCode, any> = {
       privacy: 'Privacy',
       security: 'Sicurezza dei dati',
       copyright: '© 2026 Progetto Ribbit. Ispirato a Merlin Bird ID. Sviluppato per la catalogazione scientifica.'
+    },
+    contact: {
+      title: 'Contattaci',
+      subtitle: 'Parla con il nostro team di erpetologi, sviluppatori e coordinatori scientifici.',
+      name: 'Nome Completo',
+      email: 'Indirizzo e-mail',
+      subject: 'Oggetto del Messaggio',
+      message: 'Scrivi il tuo messaggio...',
+      submit: 'Invia Messaggio ✉️',
+      success: 'Grazie! Il tuo messaggio è stato inviato con successo e il nostro team risponderà presto.'
+    },
+    donate: {
+      title: 'Sostieni la Ricerca Erpetologica',
+      subtitle: 'Aiutaci a mantenere i server, espandere Sound ID e finanziare spedizioni scientifiche in Brasile.',
+      tier1_title: 'Entusiasta',
+      tier1_desc: 'Aiuta a mantenere attiva l\'infrastruttura del server e i database bioacustici.',
+      tier2_title: 'Ricercatore',
+      tier2_desc: 'Finanzia la convalida tassonomica manuale dei canti effettuata da erpetologi accademici.',
+      tier3_title: 'Protettore',
+      tier3_desc: 'Supporta direttamente le spedizioni di registrazione e mappatura del suono nelle aree di conservazione.',
+      method: 'Seleziona il metodo di supporto',
+      pix: 'PIX (Codice Simulato)',
+      card: 'Carta di credito',
+      btn: 'Conferma Contributo 🐸'
     }
   },
   zh: {
@@ -363,7 +483,7 @@ export const translations: Record<LanguageCode, any> = {
     chat: {
       title: '与科学界建立联系',
       desc1: '集成的学术交流聊天功能将野外观察者与研究人员实时联系起来。直接向专业生物学家分享您的照片和录音，以获得分类学上的即时支持并验证新的学术记录。',
-      desc2: '参与专注于巴西生物群落的小组讨论，协助绘制管状或濒危物种的地理分布图，并拓宽您在国家两栖爬行动物学方面的知识。',
+      desc2: '参与专注于巴西生物群落的小组讨论，协助绘制管状或限制物种的地理分布图，并拓宽您在国家两栖爬行动物学方面的知识。',
       btn: '加入科学社区'
     },
     explore: {
@@ -381,6 +501,30 @@ export const translations: Record<LanguageCode, any> = {
       privacy: '隐私政策',
       security: '数据安全',
       copyright: '© 2026 Ribbit 项目。灵感来自 Merlin Bird ID。为科学编目而开发。'
+    },
+    contact: {
+      title: '联络我们',
+      subtitle: '与我们的两栖动物学家、开发人员和科学协调员团队进行交谈。',
+      name: '全名',
+      email: '电子邮件地址',
+      subject: '邮件主题',
+      message: '写下您的信息...',
+      submit: '发送信息 ✉️',
+      success: '谢谢！您的邮件已成功发送，我们的团队会尽快回复。'
+    },
+    donate: {
+      title: '支持两栖爬行动物研究',
+      subtitle: '帮助我们维护服务器、扩展 Sound ID 并资助巴西野外科学考察。',
+      tier1_title: '爱好者',
+      tier1_desc: '帮助保持服务器基础设施和生物声学数据库的运行。',
+      tier2_title: '研究员',
+      tier2_desc: '资助学术两栖爬行动物学家对鸣声进行人工分类学验证。',
+      tier3_title: '保护者',
+      tier3_desc: '直接支持在保护区进行的录音和声音分布图绘制的科学考察。',
+      method: '选择支持方式',
+      pix: 'PIX (模拟代码)',
+      card: '信用卡支付',
+      btn: '确认贡献 🐸'
     }
   },
   ko: {
@@ -442,6 +586,30 @@ export const translations: Record<LanguageCode, any> = {
       privacy: '개인정보 처리방침',
       security: '데이터 보안',
       copyright: '© 2026 Ribbit 프로젝트. Merlin Bird ID 영감. 과학적 목록 편찬을 위해 개발되었습니다.'
+    },
+    contact: {
+      title: '문의하기',
+      subtitle: '양서류 학자, 개발자 및 과학 조정팀에 문의하십시오.',
+      name: '이름',
+      email: '이메일 주소',
+      subject: '문의 제목',
+      message: '내용을 작성해 주세요...',
+      submit: '메시지 전송 ✉️',
+      success: '감사합니다! 메시지가 성공적으로 전송되었으며 담당 팀에서 곧 답변을 드릴 것입니다.'
+    },
+    donate: {
+      title: '양서류 연구 보존 후원',
+      subtitle: '서버 유지 관리, Sound ID 확장 및 브라질 과학 탐사 자금 지원에 동참하십시오.',
+      tier1_title: '애호가',
+      tier1_desc: '서버 인프라 및 바이오어쿠스틱 데이터베이스를 활성 상태로 유지하는 데 기여합니다.',
+      tier2_title: '연구자',
+      tier2_desc: '학술 연구원들의 울음소리에 대한 수동 학술적 검증 작업을 후원합니다.',
+      tier3_title: '수호자',
+      tier3_desc: '보존 지역에서의 생물 음향 녹음 및 매핑 야외 탐사 활동을 직접 후원합니다.',
+      method: '지원 방법 선택',
+      pix: 'PIX (시뮬레이션 코드)',
+      card: '신용카드 결제',
+      btn: '기부 확정 🐸'
     }
   }
 };
