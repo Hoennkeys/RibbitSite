@@ -22,11 +22,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
       {/* Lado Esquerdo - Conteúdo de Texto e CTAs (Copy Único) */}
       <div className="flex-1 flex flex-col items-start text-left max-w-2xl relative z-10">
         
-        {/* Tag de Ciência Cidadã */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 text-primary text-xs font-bold tracking-wider uppercase mb-6 select-none">
-          🐸 Ciência Cidadã
-        </div>
-        
+
         {/* Headline Único */}
         <h1 className="font-title font-extrabold text-4xl md:text-6xl tracking-tight leading-tight text-white mb-6">
           A voz dos anfíbios <br />
