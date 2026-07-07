@@ -13,7 +13,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
   return (
     <section 
       id="hero" 
-      className="hero-bg min-h-screen pt-32 pb-20 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-12 max-w-7xl mx-auto overflow-hidden"
+      className="hero-bg min-h-screen pt-40 md:pt-48 pb-20 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-12 max-w-7xl mx-auto overflow-hidden"
       aria-label="Apresentação do Ribbit"
     >
       {/* Elemento de Glow de Fundo (Ambient Light Backdrop) */}
