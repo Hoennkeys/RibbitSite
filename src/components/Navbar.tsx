@@ -6,6 +6,24 @@ export interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ onCtaClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [selectedLang, setSelectedLang] = useState('Português');
+  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
+
+  const LANGUAGES = [
+    { code: 'pt', label: 'Português' },
+    { code: 'en', label: 'English' },
+    { code: 'es', label: 'Español' },
+    { code: 'fr', label: 'Français' },
+    { code: 'it', label: 'Italiano' },
+    { code: 'zh', label: '中文' },
+    { code: 'ko', label: '한국어' }
+  ];
+
+  const handleLangSelect = (label: string, code: string) => {
+    setSelectedLang(label);
+    setIsLangDropdownOpen(false);
+    localStorage.setItem('ribbit_lang', code);
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -32,9 +50,49 @@ export const Navbar: React.FC<NavbarProps> = ({ onCtaClick }) => {
         >
           APOIAR
         </a>
-        <div className="flex items-center gap-1 cursor-pointer hover:text-primary transition-colors" aria-label="Selecione o idioma">
-          <span>Português</span>
-          <span className="text-[8px]">▼</span>
+        <div className="relative">
+          <button 
+            onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+            className="flex items-center gap-1 cursor-pointer hover:text-primary transition-colors bg-transparent border-none text-white font-bold text-[11px] uppercase tracking-wider focus:outline-none"
+            aria-label="Selecione o idioma"
+            aria-haspopup="listbox"
+            aria-expanded={isLangDropdownOpen}
+          >
+            <span>{selectedLang}</span>
+            <span 
+              className="text-[8px] transition-transform duration-200 block" 
+              style={{ transform: isLangDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+            >
+              ▼
+            </span>
+          </button>
+
+          {isLangDropdownOpen && (
+            <>
+              {/* Overlay invisível para fechar o dropdown ao clicar fora */}
+              <div 
+                className="fixed inset-0 z-40 bg-transparent" 
+                onClick={() => setIsLangDropdownOpen(false)}
+              />
+              
+              {/* Lista do Dropdown */}
+              <ul 
+                className="absolute right-0 mt-2 w-32 bg-slate-900 border border-white/10 rounded shadow-xl py-1 z-50 text-[11px] font-bold text-slate-300 animate-fade-in list-none m-0 uppercase tracking-wider"
+                role="listbox"
+              >
+                {LANGUAGES.map((lang) => (
+                  <li key={lang.code} role="option" aria-selected={selectedLang === lang.label}>
+                    <button
+                      onClick={() => handleLangSelect(lang.label, lang.code)}
+                      className="w-full text-left px-4 py-2.5 hover:bg-[#c22026] hover:text-white transition-colors block text-slate-200 font-extrabold"
+                    >
+                      {lang.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
       </div>
 
