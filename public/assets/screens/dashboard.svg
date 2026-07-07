@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 740" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030712" />
+      <stop offset="100%" stop-color="#0b1329" />
+    </linearGradient>
+    
+    <!-- Primary Green-Blue Gradient -->
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34C759" />
+      <stop offset="100%" stop-color="#0071E3" />
+    </linearGradient>
+  </defs>
+
+  <!-- Phone Body -->
+  <rect width="360" height="740" rx="40" fill="url(#bgGrad)" stroke="#1E293B" stroke-width="6" />
+  <rect x="5" y="5" width="350" height="730" rx="35" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1.5" />
+
+  <!-- Dynamic Island -->
+  <rect x="120" y="20" width="120" height="30" rx="15" fill="#030712" />
+
+  <!-- UI Header -->
+  <g transform="translate(0, 70)">
+    <text x="30" y="30" fill="#F9FAFB" font-family="'Plus Jakarta Sans', sans-serif" font-size="24" font-weight="800" letter-spacing="-1">Dashboard</text>
+    <text x="30" y="48" fill="#86868B" font-family="'Geist Sans', sans-serif" font-size="12" font-weight="400">O que há de novo na comunidade</text>
+    <text x="330" y="30" fill="#34C759" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" text-anchor="end">📊</text>
+  </g>
+
+  <!-- Content Cards -->
+  <!-- Card 1: News -->
+  <g transform="translate(24, 150)">
+    <rect width="312" height="110" rx="16" fill="#0F172A" stroke="#1E293B" stroke-width="1" />
+    <rect x="16" y="16" width="48" height="18" rx="9" fill="url(#primaryGrad)" opacity="0.15" />
+    <text x="40" y="28" fill="#34C759" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" text-anchor="middle">NOVIDADE</text>
+    
+    <text x="16" y="56" fill="#F9FAFB" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700">Nova espécie descoberta no Cerrado</text>
+    <text x="16" y="76" fill="#86868B" font-family="'Geist Sans', sans-serif" font-size="11" font-weight="400">Uma espécie inédita de sapo de folhagem foi...</text>
+    <text x="16" y="94" fill="#34C759" font-family="'Geist Sans', sans-serif" font-size="11" font-weight="700">Ler anúncio completo ›</text>
+  </g>
+
+  <!-- Card 2: Discoveries -->
+  <g transform="translate(24, 280)">
+    <rect width="312" height="170" rx="16" fill="#0F172A" stroke="#1E293B" stroke-width="1" />
+    <text x="16" y="28" fill="#F9FAFB" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700">Descobertas Importantes</text>
+    
+    <!-- Sub-item 1 -->
+    <g transform="translate(16, 45)">
+      <rect width="280" height="48" rx="10" fill="#030712" />
+      <text x="12" y="28" fill="#F9FAFB" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700">Sapo-de-chifre</text>
+      <text x="12" y="40" fill="#86868B" font-family="'Geist Sans', sans-serif" font-size="10" font-weight="400">📍 Mata Atlântica</text>
+      <rect x="220" y="15" width="48" height="18" rx="9" fill="#FF3B30" fill-opacity="0.15" />
+      <text x="244" y="27" fill="#FF3B30" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" text-anchor="middle">RARO</text>
+    </g>
+
+    <!-- Sub-item 2 -->
+    <g transform="translate(16, 105)">
+      <rect width="280" height="48" rx="10" fill="#030712" />
+      <text x="12" y="28" fill="#F9FAFB" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700">Perereca-verde</text>
+      <text x="12" y="40" fill="#86868B" font-family="'Geist Sans', sans-serif" font-size="10" font-weight="400">📍 Cerrado</text>
+      <rect x="220" y="15" width="48" height="18" rx="9" fill="#34C759" fill-opacity="0.15" />
+      <text x="244" y="27" fill="#34C759" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" text-anchor="middle">COMUM</text>
+    </g>
+  </g>
+
+  <!-- Card 3: Recent Activity -->
+  <g transform="translate(24, 470)">
+    <rect width="312" height="150" rx="16" fill="#0F172A" stroke="#1E293B" stroke-width="1" />
+    <text x="16" y="28" fill="#F9FAFB" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700">Atividade Recente</text>
+
+    <!-- Activity Item 1 -->
+    <g transform="translate(16, 42)">
+      <circle cx="20" cy="20" r="16" fill="#8B5CF6" opacity="0.2" />
+      <text x="20" y="25" fill="#8B5CF6" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="800" text-anchor="middle">J</text>
+      <text x="48" y="18" fill="#F9FAFB" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700">João Silva</text>
+      <text x="48" y="32" fill="#86868B" font-family="'Geist Sans', sans-serif" font-size="10" font-weight="400">Identificou um Sapo-cururu</text>
+      <text x="264" y="22" fill="#86868B" font-family="'Geist Sans', sans-serif" font-size="9" font-weight="400" text-anchor="end">10m atrás</text>
+    </g>
+
+    <!-- Line divider -->
+    <line x1="16" y1="92" x2="296" y2="92" stroke="#1E293B" stroke-width="1" />
+
+    <!-- Activity Item 2 -->
+    <g transform="translate(16, 100)">
+      <circle cx="20" cy="20" r="16" fill="#34C759" opacity="0.2" />
+      <text x="20" y="25" fill="#34C759" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="800" text-anchor="middle">M</text>
+      <text x="48" y="18" fill="#F9FAFB" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700">Maria Souza</text>
+      <text x="48" y="32" fill="#86868B" font-family="'Geist Sans', sans-serif" font-size="10" font-weight="400">Subiu foto de Perereca-de-vidro</text>
+      <text x="264" y="22" fill="#86868B" font-family="'Geist Sans', sans-serif" font-size="9" font-weight="400" text-anchor="end">45m atrás</text>
+    </g>
+  </g>
+
+  <!-- Bottom Navigation Bar -->
+  <g transform="translate(24, 650)">
+    <rect width="312" height="60" rx="30" fill="#0F172A" stroke="#1E293B" stroke-width="1.5" />
+    <text x="39" y="38" fill="#34C759" font-size="24" text-anchor="middle">📊</text>
+    <text x="117" y="38" fill="#86868B" font-size="20" text-anchor="middle">🎙️</text>
+    <text x="195" y="38" fill="#86868B" font-size="20" text-anchor="middle">🔍</text>
+    <text x="273" y="38" fill="#86868B" font-size="20" text-anchor="middle">🐸</text>
+    <!-- Indicator dot under active -->
+    <circle cx="39" cy="48" r="3" fill="#34C759" />
+  </g>
+</svg>

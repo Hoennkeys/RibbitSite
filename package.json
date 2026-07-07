@@ -1,0 +1,52 @@
+{
+  "name": "ribbitsite",
+  "version": "1.0.0",
+  "description": "O **RibbitSite** é o portal institucional e central científica do aplicativo **RibbitApp** (aplicativo mobile para mapeamento bioacústico de anfíbios brasileiros). O objetivo do site é converter novos observadores, explicar as funcionalidades do app, hospedar uma demo interativa de coaxares com espectrogramas, centralizar discussões acadêmicas e documentar as integrações com o Supabase.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hoennkeys/RibbitSite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Hoennkeys/RibbitSite/issues"
+  },
+  "homepage": "https://github.com/Hoennkeys/RibbitSite#readme",
+  "dependencies": {
+    "framer-motion": "^12.42.2",
+    "lottie-web": "^5.13.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/jest": "^30.0.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "autoprefixer": "^10.5.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^30.4.2",
+    "jest-environment-jsdom": "^30.4.1",
+    "postcss": "^8.5.16",
+    "tailwindcss": "^4.3.2",
+    "ts-jest": "^29.4.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.3"
+  }
+}

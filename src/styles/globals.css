@@ -1,0 +1,57 @@
+/* Importação do arquivo de tokens */
+@import "./tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- 3 Classes Utilitárias do Design System --- */
+
+/* 1. .btn-neon */
+.btn-neon {
+  background-color: var(--color-primary);
+  color: var(--color-highlight);
+  font-family: var(--font-family-title);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-neon-primary);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+}
+
+.btn-neon:hover {
+  box-shadow: var(--shadow-neon-primary-hover);
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* 2. .card-glass */
+.card-glass {
+  background: var(--glass-background);
+  border: var(--glass-border);
+  backdrop-filter: var(--glass-backdrop-filter);
+  -webkit-backdrop-filter: var(--glass-backdrop-filter);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-glass:hover {
+  border-color: rgba(var(--color-primary-rgb), 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(var(--color-primary-rgb), 0.05);
+}
+
+/* 3. .hero-bg */
+.hero-bg {
+  background-color: var(--color-background);
+  background-image: 
+    radial-gradient(circle at 80% 20%, rgba(var(--color-primary-rgb), 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(var(--color-purple-rgb), 0.08) 0%, transparent 60%);
+  position: relative;
+  overflow: hidden;
+}

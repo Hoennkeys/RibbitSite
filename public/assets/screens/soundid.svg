@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 740" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030712" />
+      <stop offset="100%" stop-color="#0b1329" />
+    </linearGradient>
+    <filter id="glowGreen" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+    </filter>
+  </defs>
+
+  <!-- Phone Body -->
+  <rect width="360" height="740" rx="40" fill="url(#bgGrad)" stroke="#1E293B" stroke-width="6" />
+  <rect x="5" y="5" width="350" height="730" rx="35" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1.5" />
+
+  <!-- Dynamic Island -->
+  <rect x="120" y="20" width="120" height="30" rx="15" fill="#030712" />
+
+  <!-- UI Header -->
+  <g transform="translate(0, 70)">
+    <text x="360" y="30" fill="#34C759" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" text-anchor="end" dx="-30">🎙️</text>
+    <text x="180" y="30" fill="#F9FAFB" font-family="'Plus Jakarta Sans', sans-serif" font-size="24" font-weight="800" letter-spacing="-1" text-anchor="middle">Sound ID</text>
+    <text x="180" y="48" fill="#86868B" font-family="'Geist Sans', sans-serif" font-size="12" font-weight="400" text-anchor="middle">Grave o coaxar para identificar o anfíbio</text>
+  </g>
+
+  <!-- Recording Area -->
+  <g transform="translate(24, 150)">
+    <rect width="312" height="260" rx="20" fill="#0F172A" stroke="#1E293B" stroke-width="1" />
+    
+    <!-- Spectrogram Window -->
+    <rect x="16" y="16" width="280" height="110" rx="12" fill="#030712" />
+    
+    <!-- Spectrogram Waves -->
+    <path d="M26,71 C50,21 70,111 96,71 C122,31 142,91 166,71 C190,51 210,101 236,71 C262,41 270,81 296,71" fill="none" stroke="#34C759" stroke-width="2.5" stroke-linecap="round" opacity="0.8" filter="url(#glowGreen)" />
+    <path d="M26,71 C60,41 80,91 106,71 C132,51 152,101 176,71 C200,41 210,81 236,71 C262,61 270,91 296,71" fill="none" stroke="#0071E3" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+
+    <!-- Timer -->
+    <text x="156" y="152" fill="#34C759" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" text-anchor="middle">00:04</text>
+
+    <!-- Stop Button -->
+    <circle cx="156" cy="205" r="32" fill="#FF3B30" />
+    <rect x="144" y="193" width="24" height="24" rx="4" fill="#FFFFFF" />
+  </g>
+
+  <!-- Suggestions Area -->
+  <g transform="translate(24, 430)">
+    <text x="0" y="20" fill="#F9FAFB" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700">Espécies Identificadas</text>
+    
+    <!-- Card suggestion -->
+    <g transform="translate(0, 36)">
+      <rect width="312" height="70" rx="16" fill="#0F172A" stroke="#34C759" stroke-opacity="0.3" stroke-width="1.5" />
+      <rect x="16" y="16" width="48" height="18" rx="9" fill="#34C759" fill-opacity="0.15" />
+      <text x="40" y="28" fill="#34C759" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" text-anchor="middle">96% Match</text>
+      
+      <text x="76" y="32" fill="#F9FAFB" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700">Sapo-cururu</text>
+      <text x="76" y="48" fill="#86868B" font-family="'Geist Sans', sans-serif" font-size="11" font-weight="500" font-style="italic">Rhinella diptycha</text>
+      
+      <circle cx="276" cy="35" r="15" fill="#34C759" />
+      <polygon points="273,29 282,35 273,41" fill="#F9FAFB" />
+    </g>
+    
+    <!-- Card suggestion 2 -->
+    <g transform="translate(0, 118)">
+      <rect width="312" height="70" rx="16" fill="#0F172A" stroke="#1E293B" stroke-width="1" opacity="0.6" />
+      <rect x="16" y="16" width="48" height="18" rx="9" fill="#0071E3" fill-opacity="0.15" />
+      <text x="40" y="28" fill="#0071E3" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" text-anchor="middle">74% Match</text>
+      
+      <text x="76" y="32" fill="#F9FAFB" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700">Perereca-verde</text>
+      <text x="76" y="48" fill="#86868B" font-family="'Geist Sans', sans-serif" font-size="11" font-weight="500" font-style="italic">Aplastodiscus argyreornatus</text>
+    </g>
+  </g>
+
+  <!-- Bottom Navigation Bar -->
+  <g transform="translate(24, 650)">
+    <rect width="312" height="60" rx="30" fill="#0F172A" stroke="#1E293B" stroke-width="1.5" />
+    <text x="39" y="38" fill="#86868B" font-size="20" text-anchor="middle">📊</text>
+    <text x="117" y="38" fill="#34C759" font-size="24" text-anchor="middle" filter="url(#glowGreen)">🎙️</text>
+    <text x="195" y="38" fill="#86868B" font-size="20" text-anchor="middle">🔍</text>
+    <text x="273" y="38" fill="#86868B" font-size="20" text-anchor="middle">🐸</text>
+    <!-- Indicator dot under active -->
+    <circle cx="117" cy="48" r="3" fill="#34C759" />
+  </g>
+</svg>
