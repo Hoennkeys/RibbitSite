@@ -41,17 +41,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onCtaClick }) => {
       {/* 2. Barra de Navegação Principal Branca (Estilo Merlin Header) */}
       <header className="w-full bg-white border-b border-slate-200 px-6 py-4 flex items-center justify-between">
         
-        {/* Bloco do Logotipo (HerpetoLab | Ribbit) */}
-        <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1.5 select-none">
-            <span className="text-3xl" role="img" aria-label="Ícone de Sapo">🐸</span>
-            <span className="font-title text-sm font-extrabold tracking-wider text-slate-800 uppercase leading-none">HerpetoLab</span>
-          </div>
-          
-          {/* Divisor Vertical */}
-          <div className="h-8 w-px bg-slate-300" />
-          
-          {/* Nome do Aplicativo */}
+        {/* Bloco do Logotipo (Apenas Ribbit com o sapo) */}
+        <div className="flex items-center gap-2 select-none">
+          <span className="text-3xl" role="img" aria-label="Ícone de Sapo">🐸</span>
           <span className="font-title text-2xl font-black tracking-tight text-slate-900 leading-none">Ribbit</span>
         </div>
 
@@ -63,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onCtaClick }) => {
         >
           <a 
             href="#hero" 
-            className="hover:text-primary transition-colors py-2 border-b-[3px] border-primary text-slate-900" 
+            className="hover:text-primary transition-colors py-2 border-b-[3px] border-transparent hover:border-primary" 
             aria-label="Ir para a página inicial"
           >
             Home
@@ -125,7 +117,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onCtaClick }) => {
               <a 
                 href="#hero" 
                 onClick={() => setIsMenuOpen(false)}
-                className="text-primary py-2 border-l-4 border-primary pl-3"
+                className="hover:text-primary py-2 pl-3 border-l-4 border-transparent hover:border-primary"
                 aria-label="Ir para o início"
               >
                 Home
