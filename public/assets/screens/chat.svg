@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 740" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030712" />
+      <stop offset="100%" stop-color="#0b1329" />
+    </linearGradient>
+    <filter id="glowGreen" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+    </filter>
+  </defs>
+
+  <!-- Phone Body -->
+  <rect width="360" height="740" rx="40" fill="url(#bgGrad)" stroke="#1E293B" stroke-width="6" />
+  <rect x="5" y="5" width="350" height="730" rx="35" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1.5" />
+
+  <!-- Dynamic Island -->
+  <rect x="120" y="20" width="120" height="30" rx="15" fill="#030712" />
+
+  <!-- UI Header -->
+  <g transform="translate(0, 70)">
+    <text x="30" y="30" fill="#F9FAFB" font-family="'Plus Jakarta Sans', sans-serif" font-size="24" font-weight="800" letter-spacing="-1">Chat</text>
+    <text x="30" y="48" fill="#86868B" font-family="'Geist Sans', sans-serif" font-size="12" font-weight="400">Converse com outros pesquisadores</text>
+  </g>
+
+  <!-- Chats List -->
+  <g transform="translate(24, 150)">
+    <!-- Chat Item 1 (Selected/Active) -->
+    <g transform="translate(0, 0)">
+      <rect width="312" height="76" rx="16" fill="#0F172A" stroke="#34C759" stroke-opacity="0.3" stroke-width="1.5" />
+      <circle cx="38" cy="38" r="22" fill="#8B5CF6" opacity="0.2" />
+      <text x="38" y="44" fill="#8B5CF6" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="700" text-anchor="middle">H</text>
+      
+      <text x="76" y="30" fill="#F9FAFB" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700">Dr. Helder</text>
+      <text x="76" y="48" fill="#86868B" font-family="'Geist Sans', sans-serif" font-size="11" font-weight="400">Aquela espécie parece ser um Leptod...</text>
+      
+      <text x="296" y="26" fill="#86868B" font-family="'Geist Sans', sans-serif" font-size="10" font-weight="400" text-anchor="end">14:20</text>
+      <circle cx="286" cy="46" r="8" fill="#34C759" />
+      <text x="286" y="49" fill="#FFFFFF" font-family="'Geist Sans', sans-serif" font-size="9" font-weight="700" text-anchor="middle">2</text>
+    </g>
+
+    <!-- Chat Item 2 -->
+    <g transform="translate(0, 92)">
+      <rect width="312" height="76" rx="16" fill="#0F172A" stroke="#1E293B" stroke-width="1" />
+      <circle cx="38" cy="38" r="22" fill="#34C759" opacity="0.2" />
+      <text x="38" y="44" fill="#34C759" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="700" text-anchor="middle">M</text>
+      
+      <text x="76" y="30" fill="#F9FAFB" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700">Grupo Mata Atlântica</text>
+      <text x="76" y="48" fill="#86868B" font-family="'Geist Sans', sans-serif" font-size="11" font-weight="400">Alguém mais ouviu esse canto hoje?</text>
+      
+      <text x="296" y="26" fill="#86868B" font-family="'Geist Sans', sans-serif" font-size="10" font-weight="400" text-anchor="end">12:05</text>
+    </g>
+
+    <!-- Chat Item 3 -->
+    <g transform="translate(0, 184)">
+      <rect width="312" height="76" rx="16" fill="#0F172A" stroke="#1E293B" stroke-width="1" />
+      <circle cx="38" cy="38" r="22" fill="#0071E3" opacity="0.2" />
+      <text x="38" y="44" fill="#0071E3" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="700" text-anchor="middle">B</text>
+      
+      <text x="76" y="30" fill="#F9FAFB" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700">Beatriz Costa</text>
+      <text x="76" y="48" fill="#86868B" font-family="'Geist Sans', sans-serif" font-size="11" font-weight="400">Foto incrível!</text>
+      
+      <text x="296" y="26" fill="#86868B" font-family="'Geist Sans', sans-serif" font-size="10" font-weight="400" text-anchor="end">Ontem</text>
+    </g>
+  </g>
+
+  <!-- Floating Action Button for New Chat -->
+  <circle cx="300" cy="580" r="28" fill="#0071E3" filter="url(#glowGreen)" />
+  <text x="300" y="589" fill="#FFFFFF" font-family="'Geist Sans', sans-serif" font-size="28" font-weight="300" text-anchor="middle">+</text>
+
+  <!-- Bottom Navigation Bar -->
+  <g transform="translate(24, 650)">
+    <rect width="312" height="60" rx="30" fill="#0F172A" stroke="#1E293B" stroke-width="1.5" />
+    <text x="39" y="38" fill="#86868B" font-size="20" text-anchor="middle">📊</text>
+    <text x="117" y="38" fill="#86868B" font-size="20" text-anchor="middle">🎙️</text>
+    <text x="195" y="38" fill="#34C759" font-size="24" text-anchor="middle" filter="url(#glowGreen)">💬</text>
+    <text x="273" y="38" fill="#86868B" font-size="20" text-anchor="middle">🐸</text>
+    <!-- Indicator dot under active -->
+    <circle cx="195" cy="48" r="3" fill="#34C759" />
+  </g>
+</svg>

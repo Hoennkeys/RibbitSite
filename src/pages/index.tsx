@@ -1,5 +1,6 @@
 import React from 'react';
 import { Hero } from '../components/Hero';
+import { ScreensCarousel } from '../components/ScreensCarousel';
 import { FeatureCard } from '../components/FeatureCard';
 
 // Ícones SVG inline para os cards de recursos
@@ -22,8 +23,8 @@ export default function Home() {
         </div>
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
           <a href="#hero" className="hover:text-primary transition-colors">Home</a>
+          <a href="#app-screens" className="hover:text-primary transition-colors">Interface</a>
           <a href="#features" className="hover:text-primary transition-colors">Funcionalidades</a>
-          <a href="#about" className="hover:text-primary transition-colors">Sobre</a>
         </nav>
         <button onClick={handleCtaClick} className="btn-neon text-xs px-4 py-2 font-bold" aria-label="Baixar aplicativo móvel">
           Download App
@@ -32,6 +33,9 @@ export default function Home() {
 
       {/* Hero Component */}
       <Hero onCtaClick={handleCtaClick} />
+
+      {/* ScreensCarousel Component */}
+      <ScreensCarousel />
 
       {/* Seção de Recursos Bento Grid */}
       <section id="features" className="py-24 px-6 md:px-12 max-w-6xl mx-auto">
