@@ -3,6 +3,7 @@ import { Hero } from '../components/Hero';
 import { ScreensCarousel } from '../components/ScreensCarousel';
 import { TechSection } from '../components/TechSection';
 import { ChatSection } from '../components/ChatSection';
+import { ExploreSection } from '../components/ExploreSection';
 
 export default function Home() {
   const handleCtaClick = () => {
@@ -25,6 +26,9 @@ export default function Home() {
 
       {/* Seção do Chat Científico (Comunidade + Sapo Red-eyed + Celular) */}
       <ChatSection />
+
+      {/* Seção de Explorar e Assistente (Catálogo Regional + Sapo Azul + Tríptico de Celulares) */}
+      <ExploreSection />
     </div>
   );
 }
