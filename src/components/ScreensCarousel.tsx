@@ -39,6 +39,7 @@ export const ScreensCarousel: React.FC = () => {
   const [isPaused, setIsPaused] = useState(false);
   const autoplayTimer = useRef<any>(null);
   const touchStartX = useRef<number | null>(null);
+  const dragStartX = useRef<number | null>(null);
 
   // Lógica de Autoplay
   useEffect(() => {
@@ -80,6 +81,30 @@ export const ScreensCarousel: React.FC = () => {
     touchStartX.current = null;
   };
 
+  // Suporte a Arrastar com Mouse (Desktop Mouse Swipe)
+  const handleMouseDown = (e: React.MouseEvent) => {
+    dragStartX.current = e.clientX;
+  };
+
+  const handleMouseUp = (e: React.MouseEvent) => {
+    if (dragStartX.current === null) return;
+    const dragEndX = e.clientX;
+    const diff = dragStartX.current - dragEndX;
+
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        handleNext(); // Arrastou para a esquerda -> próximo
+      } else {
+        handlePrev(); // Arrastou para a direita -> anterior
+      }
+    }
+    dragStartX.current = null;
+  };
+
+  const handleMouseLeaveViewport = () => {
+    dragStartX.current = null;
+  };
+
   return (
     <section 
       id="app-screens"
@@ -118,9 +143,12 @@ export const ScreensCarousel: React.FC = () => {
 
         {/* Viewport dos Celulares (Centralizado) */}
         <div 
-          className="w-full max-w-[270px] md:max-w-[300px] aspect-[360/740] relative flex items-center justify-center cursor-grab active:cursor-grabbing"
+          className="w-full max-w-[270px] md:max-w-[300px] aspect-[360/740] relative flex items-center justify-center cursor-grab active:cursor-grabbing select-none"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeaveViewport}
         >
           {SCREENS.map((screen, idx) => {
             let offset = idx - activeIndex;
@@ -144,14 +172,15 @@ export const ScreensCarousel: React.FC = () => {
                   pointerEvents: idx === activeIndex ? 'auto' : 'none',
                 }}
               >
-                <div className="w-full h-full rounded-[35px] shadow-2xl overflow-hidden bg-slate-950 border border-white/5">
+                <div className="w-full h-full rounded-[35px] shadow-2xl overflow-hidden bg-slate-950 border border-white/5 select-none">
                   <img
                     src={screen.src}
                     alt={`Screenshot da tela de ${screen.title}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover pointer-events-none select-none"
                     width="300"
                     height="620"
                     loading="lazy"
+                    draggable="false"
                   />
                 </div>
               </div>
