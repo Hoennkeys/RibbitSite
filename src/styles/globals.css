@@ -1,9 +1,26 @@
+@import "tailwindcss";
+
 /* Importação do arquivo de tokens */
 @import "./tokens.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Configuração do Tema do Tailwind v4 */
+@theme {
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-primary: var(--color-primary);
+  --color-accent: var(--color-accent);
+  --color-purple: var(--color-purple);
+  --color-highlight: var(--color-highlight);
+  --color-border: var(--color-border);
+  
+  --font-family-title: var(--font-family-title);
+  --font-family-body: var(--font-family-body);
+  
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+}
 
 /* --- 3 Classes Utilitárias do Design System --- */
 
