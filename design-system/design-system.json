@@ -1,0 +1,331 @@
+{
+  "tokens": {
+    "colors": {
+      "background": {
+        "name": "Dark background",
+        "hex": "#030712",
+        "description": "Deep black-grey background for high contrast dark mode"
+      },
+      "surface": {
+        "name": "Card surface",
+        "hex": "#0F172A",
+        "description": "Deep blue-grey color for structural components and Bento Grid cards"
+      },
+      "primary": {
+        "name": "Bioacoustic Green",
+        "hex": "#34C759",
+        "description": "Vibrant leaf green for primary highlights, active states, and audio waves"
+      },
+      "accent": {
+        "name": "Technology Blue",
+        "hex": "#0071E3",
+        "description": "Electric blue for accents, links, and secondary branding"
+      },
+      "purple": {
+        "name": "Cyber Purple",
+        "hex": "#8B5CF6",
+        "description": "Deep violet for glow effects, ambient light backdrops, and deep contrast transitions"
+      },
+      "highlight": {
+        "name": "Radiant White",
+        "hex": "#F9FAFB",
+        "description": "Bright ice white for main headings, emphasis elements, and high-readability texts"
+      },
+      "border": {
+        "name": "Slight border",
+        "hex": "#1E293B",
+        "description": "Low-contrast border color for bento layout grids and dividers"
+      }
+    },
+    "typography": {
+      "families": {
+        "title": "Plus Jakarta Sans, Syne, sans-serif",
+        "body": "Geist Sans, Inter, system-ui, sans-serif"
+      },
+      "weights": {
+        "regular": "400",
+        "medium": "500",
+        "bold": "700",
+        "extrabold": "800"
+      },
+      "sizes": {
+        "xs": "0.75rem",
+        "sm": "0.875rem",
+        "base": "1rem",
+        "lg": "1.125rem",
+        "xl": "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "1.875rem",
+        "4xl": "2.25rem",
+        "5xl": "3rem",
+        "6xl": "3.75rem"
+      },
+      "letterSpacing": {
+        "condensed": "-0.04em",
+        "normal": "0em",
+        "expanded": "0.05em"
+      }
+    },
+    "spacing": {
+      "scale": {
+        "xs": "0.25rem",
+        "sm": "0.5rem",
+        "md": "1rem",
+        "lg": "1.5rem",
+        "xl": "2rem",
+        "2xl": "3rem",
+        "3xl": "4rem",
+        "4xl": "6rem"
+      }
+    },
+    "borderRadius": {
+      "scale": {
+        "sm": "8px",
+        "md": "12px",
+        "lg": "20px",
+        "xl": "28px",
+        "full": "9999px"
+      }
+    },
+    "shadows": {
+      "scale": {
+        "soft": "0 2px 10px rgba(0, 0, 0, 0.05)",
+        "medium": "0 4px 15px rgba(0, 0, 0, 0.1)",
+        "neon_primary": "0 0 20px rgba(52, 199, 89, 0.25)",
+        "neon_accent": "0 0 20px rgba(0, 113, 227, 0.25)",
+        "neon_purple": "0 0 25px rgba(139, 92, 246, 0.3)"
+      }
+    },
+    "blur": {
+      "scale": {
+        "sm": "4px",
+        "md": "8px",
+        "lg": "16px",
+        "xl": "24px"
+      }
+    }
+  },
+  "cssVariables": {
+    "glassmorphism": {
+      "description": "CSS parameters for frosted glass cards",
+      "styles": {
+        "background": "rgba(15, 23, 42, 0.65)",
+        "border": "1px solid rgba(249, 250, 251, 0.08)",
+        "backdropFilter": "blur(24px)"
+      }
+    },
+    "glow": {
+      "description": "Glow shadows and radial gradient templates",
+      "styles": {
+        "glowPrimary": "0 0 30px rgba(52, 199, 89, 0.4)",
+        "glowAccent": "0 0 30px rgba(0, 113, 227, 0.4)",
+        "ambientBg": "radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(3, 7, 18, 0) 70%)"
+      }
+    }
+  },
+  "tailwindClasses": [
+    {
+      "className": "card-glass",
+      "description": "Applies sleek glassmorphic container aesthetics",
+      "utilities": "bg-slate-900/65 border border-slate-50/8 backdrop-blur-xl rounded-lg"
+    },
+    {
+      "className": "btn-neon-primary",
+      "description": "CTA button style with green neon hover lighting",
+      "utilities": "bg-primary text-white shadow-neon-primary hover:shadow-neon-primary-hover transition-all duration-200"
+    },
+    {
+      "className": "btn-neon-accent",
+      "description": "CTA button style with blue neon hover lighting",
+      "utilities": "bg-accent text-white shadow-neon-accent hover:shadow-neon-accent-hover transition-all duration-200"
+    },
+    {
+      "className": "text-gradient-primary-accent",
+      "description": "Applies a bioacoustic-to-tech color gradient to texts",
+      "utilities": "bg-clip-text text-transparent bg-gradient-to-r from-[#34C759] to-[#0071E3]"
+    },
+    {
+      "className": "bento-grid",
+      "description": "Standard Bento Grid layout grid with custom gap",
+      "utilities": "grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[180px]"
+    },
+    {
+      "className": "glow-aura",
+      "description": "Background blur ambient aura glow effect",
+      "utilities": "absolute rounded-full filter blur-[120px] opacity-15"
+    }
+  ],
+  "components": [
+    {
+      "name": "Navbar",
+      "description": "Top sticky navigation header with glassmorphic backing and logo/CTA controls.",
+      "props": [
+        {
+          "name": "activeRoute",
+          "type": "string",
+          "description": "The currently highlighted page path (e.g. '/funcionalidades')"
+        },
+        {
+          "name": "onDownloadClick",
+          "type": "function",
+          "description": "Callback executed when the main CTA button is clicked"
+        }
+      ],
+      "structure": "<nav className=\"navbar\">\n  <div className=\"logo-container\">\n    <span className=\"logo-emoji\">🐸</span>\n    <span className=\"logo-text\">Ribbit</span>\n  </div>\n  <ul className=\"nav-links\">\n    <li><a href=\"#home\">Home</a></li>\n    <li><a href=\"#funcionalidades\">Funcionalidades</a></li>\n    <li><a href=\"#demo\">Demo</a></li>\n    <li><a href=\"#sobre\">Sobre</a></li>\n    <li><a href=\"#faq\">FAQ</a></li>\n  </ul>\n  <button className=\"btn-nav\" onClick={onDownloadClick}>Baixar App</button>\n</nav>",
+      "tokens_used": [
+        "colors.background",
+        "colors.highlight",
+        "borderRadius.scale.full",
+        "blur.scale.xl",
+        "typography.families.title"
+      ],
+      "classes_used": [
+        "card-glass",
+        "btn-neon-primary"
+      ]
+    },
+    {
+      "name": "Hero",
+      "description": "Promotional first dobra containing copy, call-to-actions and 3D device mockup display.",
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "description": "Primary value proposition title"
+        },
+        {
+          "name": "subtitle",
+          "type": "string",
+          "description": "Supporting scientific descriptive text"
+        },
+        {
+          "name": "onCtaClick",
+          "type": "function",
+          "description": "Callback executed when main button is clicked"
+        }
+      ],
+      "structure": "<section className=\"hero-section\">\n  <div className=\"hero-content\">\n    <h1 className=\"hero-title\">{title}</h1>\n    <p className=\"hero-subtitle\">{subtitle}</p>\n    <div className=\"hero-ctas\">\n      <button className=\"btn-primary\" onClick={onCtaClick}>Baixar Grátis</button>\n      <button className=\"btn-secondary\">Conhecer Projeto</button>\n    </div>\n  </div>\n  <div className=\"hero-mockup\">\n    <div className=\"glow-bg-primary\"></div>\n    <div className=\"phone-mockup-wrapper\">\n      {/* 3D phone screen inside phone casing */}\n    </div>\n  </div>\n</section>",
+      "tokens_used": [
+        "colors.background",
+        "colors.primary",
+        "colors.highlight",
+        "typography.families.title",
+        "typography.sizes.6xl",
+        "spacing.scale.2xl"
+      ],
+      "classes_used": [
+        "btn-neon-primary",
+        "glow-aura",
+        "text-gradient-primary-accent"
+      ]
+    },
+    {
+      "name": "FeatureCard",
+      "description": "Sleek Bento grid unit displaying app capabilities with icon, title and description.",
+      "props": [
+        {
+          "name": "icon",
+          "type": "string",
+          "description": "Unicode emoji or custom SVG icon"
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "Capability header"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "Detailed text detailing the mechanics"
+        },
+        {
+          "name": "size",
+          "type": "string",
+          "description": "'small' (1 column) or 'large' (2 columns in grid)"
+        }
+      ],
+      "structure": "<div className={`feature-card size-${size}`}>\n  <div className=\"icon-wrapper\">{icon}</div>\n  <h3 className=\"card-title\">{title}</h3>\n  <p className=\"card-desc\">{description}</p>\n</div>",
+      "tokens_used": [
+        "colors.surface",
+        "colors.border",
+        "borderRadius.scale.lg",
+        "spacing.scale.md",
+        "typography.sizes.lg"
+      ],
+      "classes_used": [
+        "card-glass"
+      ]
+    },
+    {
+      "name": "CTAButton",
+      "description": "Highly interactive button supporting neon gradients, icons, and micro-animations.",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "description": "The button display text"
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "description": "'primary' (green neon) or 'secondary' (blue/border)"
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "description": "Optional trailing icon emoji or SVG"
+        },
+        {
+          "name": "onClick",
+          "type": "function",
+          "description": "Execution callback"
+        }
+      ],
+      "structure": "<button className={`cta-btn variant-${variant}`} onClick={onClick}>\n  <span className=\"btn-label\">{label}</span>\n  {icon && <span className=\"btn-icon\">{icon}</span>}\n</button>",
+      "tokens_used": [
+        "colors.primary",
+        "colors.accent",
+        "borderRadius.scale.md",
+        "shadows.scale.neon_primary"
+      ],
+      "classes_used": [
+        "btn-neon-primary",
+        "btn-neon-accent"
+      ]
+    },
+    {
+      "name": "ScreensCarousel",
+      "description": "Interactive layout showcasing app screens (Dashboard, SoundID, Wizard) in a sliding viewport.",
+      "props": [
+        {
+          "name": "screens",
+          "type": "array",
+          "description": "List of screen objects containing title, description, and mock image URL"
+        }
+      ],
+      "structure": "<div className=\"carousel-container\">\n  <div className=\"carousel-viewport\">\n    {screens.map((screen, idx) => (\n      <div key={idx} className=\"carousel-slide\">\n        <div className=\"slide-mockup-wrapper\">\n          <img src={screen.imageUrl} alt={screen.title} className=\"slide-image\" />\n        </div>\n        <div className=\"slide-info\">\n          <h4 className=\"slide-title\">{screen.title}</h4>\n          <p className=\"slide-desc\">{screen.description}</p>\n        </div>\n      </div>\n    ))}\n  </div>\n  <div className=\"carousel-indicators\">\n    {screens.map((_, idx) => (\n      <span key={idx} className=\"dot\" />\n    ))}\n  </div>\n</div>",
+      "tokens_used": [
+        "colors.background",
+        "borderRadius.scale.xl",
+        "spacing.scale.xl",
+        "shadows.scale.medium"
+      ],
+      "classes_used": [
+        "card-glass"
+      ]
+    },
+    {
+      "name": "Footer",
+      "description": "Ending footer containing logo, university links, scientific disclaimer, and licensing details.",
+      "props": [],
+      "structure": "<footer className=\"site-footer\">\n  <div className=\"footer-top\">\n    <div className=\"footer-branding\">\n      <span className=\"footer-logo\">🐸 Ribbit</span>\n      <p className=\"footer-description\">Ciência cidadã mapeando a biodiversidade brasileira.</p>\n    </div>\n    <div className=\"footer-links-group\">\n      <h5>Parcerias</h5>\n      <ul>\n        <li><a href=\"#\">Universidades</a></li>\n        <li><a href=\"#\">Revisores Acadêmicos</a></li>\n        <li><a href=\"#\">Herpetologia Brasil</a></li>\n      </ul>\n    </div>\n  </div>\n  <div className=\"footer-bottom\">\n    <span className=\"copyright\">© 2026 Ribbit. Licença Creative Commons BY-NC.</span>\n  </div>\n</footer>",
+      "tokens_used": [
+        "colors.border",
+        "colors.background",
+        "typography.sizes.xs",
+        "spacing.scale.lg"
+      ],
+      "classes_used": []
+    }
+  ]
+}
