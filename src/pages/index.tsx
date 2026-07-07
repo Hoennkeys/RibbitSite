@@ -1,3 +1,4 @@
+import { Navbar } from '../components/Navbar';
 import { Hero } from '../components/Hero';
 import { ScreensCarousel } from '../components/ScreensCarousel';
 import { FeatureCard } from '../components/FeatureCard';
@@ -14,21 +15,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-highlight font-body">
-      {/* Header / Navbar */}
-      <header className="fixed top-0 left-0 w-full z-50 card-glass border-b border-white/5 px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <span className="text-2xl" role="img" aria-label="Sapo">🐸</span>
-          <span className="font-title font-extrabold text-xl tracking-tight text-white">Ribbit</span>
-        </div>
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-          <a href="#hero" className="hover:text-primary transition-colors">Home</a>
-          <a href="#app-screens" className="hover:text-primary transition-colors">Interface</a>
-          <a href="#features" className="hover:text-primary transition-colors">Funcionalidades</a>
-        </nav>
-        <button onClick={handleCtaClick} className="btn-neon text-xs px-4 py-2 font-bold" aria-label="Baixar aplicativo móvel">
-          Download App
-        </button>
-      </header>
+      {/* Navbar Component */}
+      <Navbar onCtaClick={handleCtaClick} />
 
       {/* Hero Component */}
       <Hero onCtaClick={handleCtaClick} />
