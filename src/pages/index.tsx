@@ -1,4 +1,3 @@
-import React from 'react';
 import { Hero } from '../components/Hero';
 import { ScreensCarousel } from '../components/ScreensCarousel';
 import { FeatureCard } from '../components/FeatureCard';

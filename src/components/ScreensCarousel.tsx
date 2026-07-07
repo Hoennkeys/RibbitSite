@@ -37,7 +37,7 @@ const SCREENS: ScreenItem[] = [
 export const ScreensCarousel: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const autoplayTimer = useRef<NodeJS.Timeout | null>(null);
+  const autoplayTimer = useRef<any>(null);
   const touchStartX = useRef<number | null>(null);
 
   // Lógica de Autoplay

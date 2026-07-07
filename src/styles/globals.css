@@ -1,9 +1,9 @@
+/* Importação do arquivo de tokens */
+@import "./tokens.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Importação do arquivo de tokens */
-@import "./tokens.css";
 
 /* --- 3 Classes Utilitárias do Design System --- */
 
