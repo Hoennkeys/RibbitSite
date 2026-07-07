@@ -1,6 +1,9 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const ExploreSection: React.FC = () => {
+  const { t } = useLanguage();
+
   const handleExploreClick = () => {
     alert('Acesso ao catálogo geográfico e mapas interativos de biomas em desenvolvimento.');
   };
@@ -16,23 +19,23 @@ export const ExploreSection: React.FC = () => {
         {/* Lado Esquerdo - Copy e Informações (Estilo Merlin) */}
         <div className="flex-1 flex flex-col items-start text-left max-w-xl">
           <h2 className="font-title font-extrabold text-3xl md:text-4xl text-slate-900 tracking-tight mb-6">
-            Explore Espécies por Região e Bioma
+            {t('explore.title')}
           </h2>
           
           <p className="font-body text-slate-700 text-base md:text-lg leading-relaxed mb-6">
-            O catálogo do <strong className="text-slate-900">Explorar</strong> permite que você descubra os anfíbios nativos de cada região do Brasil. Filtre os registros por biomas como Mata Atlântica, Cerrado ou Amazônia e consulte mapas de dispersão geográfica para entender exatamente a origem de cada espécie.
+            {t('explore.desc1')}
           </p>
           
           <p className="font-body text-slate-500 text-sm md:text-base leading-relaxed mb-8">
-            Dúvidas na identificação? O <strong className="text-slate-900">Assistente Guiado</strong> faz perguntas morfológicas rápidas sobre o bioma, comportamento e tipo de canto, cruzando dados geográficos locais para listar as espécies com maior probabilidade de ocorrência na sua área.
+            {t('explore.desc2')}
           </p>
           
           <button 
             onClick={handleExploreClick}
-            className="border-2 border-slate-800 hover:border-primary text-slate-800 hover:text-primary hover:bg-slate-50 transition-all duration-200 font-title font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-md"
+            className="border-2 border-slate-800 hover:border-primary text-slate-800 hover:text-primary hover:bg-slate-50 transition-all duration-200 font-title font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-md cursor-pointer"
             aria-label="Acessar o mapa de biomas brasileiros"
           >
-            Explorar Biomas
+            {t('explore.btn')}
           </button>
         </div>
 

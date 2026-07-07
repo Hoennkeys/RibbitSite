@@ -1,3 +1,4 @@
+import { LanguageProvider } from '../context/LanguageContext';
 import { Navbar } from '../components/Navbar';
 import { Hero } from '../components/Hero';
 import { ScreensCarousel } from '../components/ScreensCarousel';
@@ -12,29 +13,31 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-highlight font-body flex flex-col justify-between">
-      <div>
-        {/* Navbar Component */}
-        <Navbar onCtaClick={handleCtaClick} />
+    <LanguageProvider>
+      <div className="min-h-screen bg-background text-highlight font-body flex flex-col justify-between">
+        <div>
+          {/* Navbar Component */}
+          <Navbar onCtaClick={handleCtaClick} />
 
-        {/* Hero Component */}
-        <Hero onCtaClick={handleCtaClick} />
+          {/* Hero Component */}
+          <Hero onCtaClick={handleCtaClick} />
 
-        {/* ScreensCarousel Component */}
-        <ScreensCarousel />
+          {/* ScreensCarousel Component */}
+          <ScreensCarousel />
 
-        {/* Seção de Tecnologia Integrada ao Campo (Sound ID + Sapo + Celular) */}
-        <TechSection />
+          {/* Seção de Tecnologia Integrada ao Campo (Sound ID + Sapo + Celular) */}
+          <TechSection />
 
-        {/* Seção do Chat Científico (Comunidade + Sapo Red-eyed + Celular) */}
-        <ChatSection />
+          {/* Seção do Chat Científico (Comunidade + Sapo Red-eyed + Celular) */}
+          <ChatSection />
 
-        {/* Seção de Explorar e Assistente (Catálogo Regional + Sapo Azul + Tríptico de Celulares) */}
-        <ExploreSection />
+          {/* Seção de Explorar e Assistente (Catálogo Regional + Sapo Azul + Tríptico de Celulares) */}
+          <ExploreSection />
+        </div>
+
+        {/* Footer Component */}
+        <Footer />
       </div>
-
-      {/* Footer Component */}
-      <Footer />
-    </div>
+    </LanguageProvider>
   );
 }

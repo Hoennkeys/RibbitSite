@@ -1,6 +1,9 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const TechSection: React.FC = () => {
+  const { t } = useLanguage();
+
   const handleMoreClick = () => {
     alert('Mais informações detalhadas sobre a tecnologia Sound ID e algoritmos bioacústicos serão disponibilizadas em breve.');
   };
@@ -15,24 +18,27 @@ export const TechSection: React.FC = () => {
         
         {/* Lado Esquerdo - Copy e Informações (Estilo Merlin) */}
         <div className="flex-1 flex flex-col items-start text-left max-w-xl">
+          <span className="text-primary text-[11px] font-bold tracking-widest uppercase bg-primary/10 px-3 py-1 rounded-full border border-primary/20 mb-5 select-none">
+            {t('tech.tag')}
+          </span>
           <h2 className="font-title font-extrabold text-3xl md:text-4xl text-slate-900 tracking-tight mb-6">
-            Identifique Cantos e Coaxares de Anfíbios
+            {t('tech.title')}
           </h2>
           
           <p className="font-body text-slate-700 text-base md:text-lg leading-relaxed mb-6">
-            O <strong className="text-slate-900">Sound ID</strong> escuta os anfíbios ao seu redor e mostra sugestões em tempo real de quem está cantando. Compare a sua gravação com os coaxares catalogados no Ribbit para confirmar o que você ouviu. O Sound ID funciona completamente offline, permitindo identificar anfíbios no campo, não importa onde você esteja.
+            {t('tech.desc1')}
           </p>
           
           <p className="font-body text-slate-500 text-sm md:text-base leading-relaxed mb-8">
-            Disponível para centenas de espécies na Mata Atlântica, Cerrado, Amazônia e outros biomas nacionais. Mais espécies e gravações validadas são adicionadas constantemente pela comunidade herpetológica brasileira.
+            {t('tech.desc2')}
           </p>
           
           <button 
             onClick={handleMoreClick}
-            className="border-2 border-slate-800 hover:border-primary text-slate-800 hover:text-primary hover:bg-slate-50 transition-all duration-200 font-title font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-md"
+            className="border-2 border-slate-800 hover:border-primary text-slate-800 hover:text-primary hover:bg-slate-50 transition-all duration-200 font-title font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-md cursor-pointer"
             aria-label="Saber mais sobre o funcionamento do Sound ID"
           >
-            Mais sobre o Sound ID
+            {t('tech.btn')}
           </button>
         </div>
 

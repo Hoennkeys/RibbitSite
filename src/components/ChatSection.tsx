@@ -1,6 +1,9 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const ChatSection: React.FC = () => {
+  const { t } = useLanguage();
+
   const handleCommunityClick = () => {
     alert('Acesso ao fórum e portal acadêmico da comunidade científica em desenvolvimento.');
   };
@@ -16,23 +19,23 @@ export const ChatSection: React.FC = () => {
         {/* Lado Direito - Copy e Informações (Estilo Merlin, alternado) */}
         <div className="flex-1 flex flex-col items-start text-left max-w-xl">
           <h2 className="font-title font-extrabold text-3xl md:text-4xl text-slate-900 tracking-tight mb-6">
-            Conecte-se com a Comunidade Científica
+            {t('chat.title')}
           </h2>
           
           <p className="font-body text-slate-700 text-base md:text-lg leading-relaxed mb-6">
-            O <strong className="text-slate-900">Chat Científico</strong> integrado conecta observadores de campo e pesquisadores em tempo real. Compartilhe suas fotos e gravações de áudio diretamente com biólogos especialistas para obter suporte imediato na classificação taxonômica e validar novos registros.
+            {t('chat.desc1')}
           </p>
           
           <p className="font-body text-slate-500 text-sm md:text-base leading-relaxed mb-8">
-            Participe de grupos de discussão focados nos biomas brasileiros, colabore no mapeamento geográfico de espécies em perigo de extinção e expanda seus conhecimentos sobre a herpetologia nacional.
+            {t('chat.desc2')}
           </p>
           
           <button 
             onClick={handleCommunityClick}
-            className="border-2 border-slate-800 hover:border-primary text-slate-800 hover:text-primary hover:bg-slate-50 transition-all duration-200 font-title font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-md"
+            className="border-2 border-slate-800 hover:border-primary text-slate-800 hover:text-primary hover:bg-slate-50 transition-all duration-200 font-title font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-md cursor-pointer"
             aria-label="Saber mais sobre o chat comunitário e fórum de pesquisa"
           >
-            Conhecer a Comunidade
+            {t('chat.btn')}
           </button>
         </div>
 
