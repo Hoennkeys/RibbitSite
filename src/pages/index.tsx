@@ -4,6 +4,7 @@ import { ScreensCarousel } from '../components/ScreensCarousel';
 import { TechSection } from '../components/TechSection';
 import { ChatSection } from '../components/ChatSection';
 import { ExploreSection } from '../components/ExploreSection';
+import { Footer } from '../components/Footer';
 
 export default function Home() {
   const handleCtaClick = () => {
@@ -11,24 +12,29 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-highlight font-body">
-      {/* Navbar Component */}
-      <Navbar onCtaClick={handleCtaClick} />
+    <div className="min-h-screen bg-background text-highlight font-body flex flex-col justify-between">
+      <div>
+        {/* Navbar Component */}
+        <Navbar onCtaClick={handleCtaClick} />
 
-      {/* Hero Component */}
-      <Hero onCtaClick={handleCtaClick} />
+        {/* Hero Component */}
+        <Hero onCtaClick={handleCtaClick} />
 
-      {/* ScreensCarousel Component */}
-      <ScreensCarousel />
+        {/* ScreensCarousel Component */}
+        <ScreensCarousel />
 
-      {/* Seção de Tecnologia Integrada ao Campo (Sound ID + Sapo + Celular) */}
-      <TechSection />
+        {/* Seção de Tecnologia Integrada ao Campo (Sound ID + Sapo + Celular) */}
+        <TechSection />
 
-      {/* Seção do Chat Científico (Comunidade + Sapo Red-eyed + Celular) */}
-      <ChatSection />
+        {/* Seção do Chat Científico (Comunidade + Sapo Red-eyed + Celular) */}
+        <ChatSection />
 
-      {/* Seção de Explorar e Assistente (Catálogo Regional + Sapo Azul + Tríptico de Celulares) */}
-      <ExploreSection />
+        {/* Seção de Explorar e Assistente (Catálogo Regional + Sapo Azul + Tríptico de Celulares) */}
+        <ExploreSection />
+      </div>
+
+      {/* Footer Component */}
+      <Footer />
     </div>
   );
 }
