@@ -37,10 +37,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onCtaClick }) => {
         <a 
           href="#donate" 
           className="bg-[#c22026] hover:bg-[#a6151a] text-white px-3 py-1 rounded-sm font-extrabold transition-colors"
-          onClick={(e) => {
-            e.preventDefault();
-            alert('Agradecemos seu interesse! O sistema de doações para a pesquisa herpetológica estará disponível em breve.');
-          }}
           aria-label="Apoiar o projeto científico com doações"
         >
           {t('navbar.support')}
