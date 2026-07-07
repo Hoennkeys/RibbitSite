@@ -1,37 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface ScreenItem {
-  title: string;
-  description: string;
   src: string;
 }
 
-const SCREENS: ScreenItem[] = [
-  {
-    title: 'Painel Inicial',
-    description: 'Acompanhe as últimas descobertas de anfíbios e notícias científicas da comunidade.',
-    src: '/assets/screens/dashboard.svg',
-  },
-  {
-    title: 'Sound ID',
-    description: 'Grave o canto e compare a assinatura bioacústica do anfíbio em tempo real.',
-    src: '/assets/screens/soundid.svg',
-  },
-  {
-    title: 'Explorar Regiões',
-    description: 'Consulte o catálogo de espécies organizado por biomas brasileiros.',
-    src: '/assets/screens/explore.svg',
-  },
-  {
-    title: 'Assistente Geográfico',
-    description: 'Identifique anfíbios por morfologia e habitat através de filtragem offline.',
-    src: '/assets/screens/wizard.svg',
-  },
-  {
-    title: 'Chat Científico',
-    description: 'Conecte-se com biólogos e herpetólogos para tirar dúvidas taxonômicas.',
-    src: '/assets/screens/chat.svg',
-  },
+const SCREENS_DATA: ScreenItem[] = [
+  { src: '/assets/screens/dashboard.svg' },
+  { src: '/assets/screens/soundid.svg' },
+  { src: '/assets/screens/explore.svg' },
+  { src: '/assets/screens/wizard.svg' },
+  { src: '/assets/screens/chat.svg' },
 ];
 
 export const ScreensCarousel: React.FC = () => {
@@ -40,6 +19,8 @@ export const ScreensCarousel: React.FC = () => {
   const autoplayTimer = useRef<any>(null);
   const touchStartX = useRef<number | null>(null);
   const dragStartX = useRef<number | null>(null);
+
+  const { t } = useLanguage();
 
   // Lógica de Autoplay
   useEffect(() => {
@@ -54,11 +35,11 @@ export const ScreensCarousel: React.FC = () => {
   }, [activeIndex, isPaused]);
 
   const handlePrev = () => {
-    setActiveIndex((prev) => (prev === 0 ? SCREENS.length - 1 : prev - 1));
+    setActiveIndex((prev) => (prev === 0 ? SCREENS_DATA.length - 1 : prev - 1));
   };
 
   const handleNext = () => {
-    setActiveIndex((prev) => (prev === SCREENS.length - 1 ? 0 : prev + 1));
+    setActiveIndex((prev) => (prev === SCREENS_DATA.length - 1 ? 0 : prev + 1));
   };
 
   // Suporte a Swipe de Toque (Mobile Touch Gesture)
@@ -105,6 +86,15 @@ export const ScreensCarousel: React.FC = () => {
     dragStartX.current = null;
   };
 
+  // Helper para buscar título e descrição traduzidos do slide atual
+  const getActiveTitle = () => {
+    return t(`carousel.slides.${activeIndex}.title`) || '';
+  };
+
+  const getActiveDescription = () => {
+    return t(`carousel.slides.${activeIndex}.description`) || '';
+  };
+
   return (
     <section 
       id="app-screens"
@@ -117,13 +107,13 @@ export const ScreensCarousel: React.FC = () => {
       {/* 1. Cabeçalho de Introdução da Seção */}
       <div className="text-center max-w-2xl mb-12 relative z-10">
         <span className="text-primary text-[11px] font-bold tracking-widest uppercase bg-primary/10 px-3 py-1 rounded-full border border-primary/20 select-none">
-          Galeria do App
+          {t('carousel.tag')}
         </span>
         <h2 className="font-title font-bold text-3xl md:text-4xl text-white tracking-tight mt-6 mb-4">
-          Conheça a interface do Ribbit
+          {t('carousel.title')}
         </h2>
         <p className="font-body text-slate-400 text-sm md:text-base">
-          Explore as principais telas desenvolvidas sob a estética de alto contraste do design system.
+          {t('carousel.subtitle')}
         </p>
       </div>
 
@@ -150,12 +140,12 @@ export const ScreensCarousel: React.FC = () => {
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseLeaveViewport}
         >
-          {SCREENS.map((screen, idx) => {
+          {SCREENS_DATA.map((screen, idx) => {
             let offset = idx - activeIndex;
             
             // Ajuste circular do index do slide
-            if (offset < -2) offset += SCREENS.length;
-            if (offset > 2) offset -= SCREENS.length;
+            if (offset < -2) offset += SCREENS_DATA.length;
+            if (offset > 2) offset -= SCREENS_DATA.length;
 
             const isVisible = Math.abs(offset) <= 1;
 
@@ -175,7 +165,7 @@ export const ScreensCarousel: React.FC = () => {
                 <div className="w-full h-full rounded-[35px] shadow-2xl overflow-hidden bg-slate-950 border border-white/5 select-none">
                   <img
                     src={screen.src}
-                    alt={`Screenshot da tela de ${screen.title}`}
+                    alt={`Screenshot da tela de ${t(`carousel.slides.${idx}.title`)}`}
                     className="w-full h-full object-cover pointer-events-none select-none"
                     width="300"
                     height="620"
@@ -202,20 +192,20 @@ export const ScreensCarousel: React.FC = () => {
       <div className="text-center max-w-md mt-10 px-6 z-10 transition-all duration-300">
         <div className="mb-2 select-none">
           <span className="text-slate-500 font-title font-bold text-[11px] tracking-widest uppercase">
-            TELA {activeIndex + 1} DE {SCREENS.length}
+            TELA {activeIndex + 1} DE {SCREENS_DATA.length}
           </span>
         </div>
         <h3 className="font-title font-bold text-2xl text-white tracking-tight mb-3">
-          {SCREENS[activeIndex].title}
+          {getActiveTitle()}
         </h3>
         <p className="font-body text-slate-400 leading-relaxed text-sm md:text-base min-h-[50px] max-w-sm mx-auto">
-          {SCREENS[activeIndex].description}
+          {getActiveDescription()}
         </p>
       </div>
 
       {/* 4. Indicadores de Bolinhas (Paginação) */}
       <div className="flex items-center gap-2.5 mt-8 z-10">
-        {SCREENS.map((_, idx) => (
+        {SCREENS_DATA.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setActiveIndex(idx)}

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import { LANGUAGES, LanguageCode } from '../utils/translations';
 
 export interface NavbarProps {
   onCtaClick?: () => void;
@@ -6,6 +8,10 @@ export interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ onCtaClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
+
+  const currentLanguageLabel = LANGUAGES.find((lang) => lang.code === language)?.label || 'Português';
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -16,11 +22,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onCtaClick }) => {
     setIsMenuOpen(false);
   };
 
+  const handleLangSelect = (code: LanguageCode) => {
+    setLanguage(code);
+    setIsLangDropdownOpen(false);
+  };
+
   return (
     <div className="fixed top-0 left-0 w-full z-50 flex flex-col shadow-md">
       {/* 1. Barra Utilitária Superior Fina (Estilo Cornell Lab) */}
       <div className="w-full bg-[#8b0f14] text-white text-[11px] py-2 px-6 flex justify-end items-center gap-6 font-bold tracking-wider uppercase">
-        <a href="#contact" className="hover:text-primary transition-colors" aria-label="Falar com o laboratório de herpetologia">CONTATO</a>
+        <a href="#contact" className="hover:text-primary transition-colors" aria-label="Falar com o laboratório de herpetologia">
+          {t('navbar.contact')}
+        </a>
         <a 
           href="#donate" 
           className="bg-[#c22026] hover:bg-[#a6151a] text-white px-3 py-1 rounded-sm font-extrabold transition-colors"
@@ -30,11 +43,53 @@ export const Navbar: React.FC<NavbarProps> = ({ onCtaClick }) => {
           }}
           aria-label="Apoiar o projeto científico com doações"
         >
-          APOIAR
+          {t('navbar.support')}
         </a>
-        <div className="flex items-center gap-1 cursor-pointer hover:text-primary transition-colors" aria-label="Selecione o idioma">
-          <span>Português</span>
-          <span className="text-[8px]">▼</span>
+        
+        {/* Seletor de Idioma Dropdown */}
+        <div className="relative">
+          <button 
+            onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+            className="flex items-center gap-1 cursor-pointer hover:text-primary transition-colors bg-transparent border-none text-white font-bold text-[11px] uppercase tracking-wider focus:outline-none"
+            aria-label="Selecione o idioma"
+            aria-haspopup="listbox"
+            aria-expanded={isLangDropdownOpen}
+          >
+            <span>{currentLanguageLabel}</span>
+            <span 
+              className="text-[8px] transition-transform duration-200 block" 
+              style={{ transform: isLangDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+            >
+              ▼
+            </span>
+          </button>
+
+          {isLangDropdownOpen && (
+            <>
+              {/* Overlay invisível para fechar o dropdown ao clicar fora */}
+              <div 
+                className="fixed inset-0 z-40 bg-transparent" 
+                onClick={() => setIsLangDropdownOpen(false)}
+              />
+              
+              {/* Lista do Dropdown */}
+              <ul 
+                className="absolute right-0 mt-2 w-32 bg-slate-900 border border-white/10 rounded shadow-xl py-1 z-50 text-[11px] font-bold text-slate-300 animate-fade-in list-none m-0 uppercase tracking-wider"
+                role="listbox"
+              >
+                {LANGUAGES.map((lang) => (
+                  <li key={lang.code} role="option" aria-selected={language === lang.code}>
+                    <button
+                      onClick={() => handleLangSelect(lang.code)}
+                      className="w-full text-left px-4 py-2.5 hover:bg-[#c22026] hover:text-white transition-colors block text-slate-200 font-extrabold"
+                    >
+                      {lang.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
       </div>
 
@@ -58,35 +113,35 @@ export const Navbar: React.FC<NavbarProps> = ({ onCtaClick }) => {
             className="hover:text-primary transition-colors py-2 border-b-[3px] border-transparent hover:border-primary" 
             aria-label="Ir para a página inicial"
           >
-            Home
+            {t('navbar.home')}
           </a>
           <a 
             href="#about" 
             className="hover:text-primary transition-colors py-2 border-b-[3px] border-transparent hover:border-primary" 
             aria-label="Saber mais sobre a história do Ribbit"
           >
-            A História
+            {t('navbar.story')}
           </a>
           <a 
             href="#app-screens" 
             className="hover:text-primary transition-colors py-2 border-b-[3px] border-transparent hover:border-primary" 
             aria-label="Ver recursos e telas de Sound ID"
           >
-            Sound ID
+            {t('navbar.soundid')}
           </a>
           <a 
             href="#features" 
             className="hover:text-primary transition-colors py-2 border-b-[3px] border-transparent hover:border-primary" 
             aria-label="Ver recursos bioacústicos"
           >
-            Recursos
+            {t('navbar.resources')}
           </a>
           <button 
             onClick={handleCta} 
-            className="hover:text-primary transition-colors py-2 border-b-[3px] border-transparent hover:border-primary font-bold uppercase tracking-wide"
+            className="hover:text-primary transition-colors py-2 border-b-[3px] border-transparent hover:border-primary font-bold uppercase tracking-wide cursor-pointer"
             aria-label="Baixar o aplicativo móvel Ribbit"
           >
-            Download
+            {t('navbar.download')}
           </button>
         </nav>
 
@@ -120,7 +175,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onCtaClick }) => {
                 className="hover:text-primary py-2 pl-3 border-l-4 border-transparent hover:border-primary"
                 aria-label="Ir para o início"
               >
-                Home
+                {t('navbar.home')}
               </a>
               <a 
                 href="#about" 
@@ -128,7 +183,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onCtaClick }) => {
                 className="hover:text-primary py-2 pl-3 border-l-4 border-transparent hover:border-primary"
                 aria-label="Saber mais sobre a história do Ribbit"
               >
-                A História
+                {t('navbar.story')}
               </a>
               <a 
                 href="#app-screens" 
@@ -136,7 +191,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onCtaClick }) => {
                 className="hover:text-primary py-2 pl-3 border-l-4 border-transparent hover:border-primary"
                 aria-label="Ver telas do Sound ID"
               >
-                Sound ID
+                {t('navbar.soundid')}
               </a>
               <a 
                 href="#features" 
@@ -144,14 +199,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onCtaClick }) => {
                 className="hover:text-primary py-2 pl-3 border-l-4 border-transparent hover:border-primary"
                 aria-label="Ver recursos do aplicativo"
               >
-                Recursos
+                {t('navbar.resources')}
               </a>
               <button 
                 onClick={handleCta} 
-                className="text-left hover:text-primary py-2 pl-3 border-l-4 border-transparent hover:border-primary font-bold uppercase"
+                className="text-left hover:text-primary py-2 pl-3 border-l-4 border-transparent hover:border-primary font-bold uppercase cursor-pointer"
                 aria-label="Baixar o aplicativo móvel Ribbit"
               >
-                Download
+                {t('navbar.download')}
               </button>
             </nav>
           </div>
