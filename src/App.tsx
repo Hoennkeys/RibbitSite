@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Home from './pages/index';
 import Contact from './pages/contact';
 import Donate from './pages/donate';
+import AdminDashboard from './pages/admin';
 
 export default function App() {
   const [route, setRoute] = useState<string>('home');
@@ -14,6 +15,9 @@ export default function App() {
         window.scrollTo({ top: 0, behavior: 'instant' });
       } else if (hash === '#donate') {
         setRoute('donate');
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      } else if (hash === '#admin') {
+        setRoute('admin');
         window.scrollTo({ top: 0, behavior: 'instant' });
       } else {
         setRoute('home');
@@ -33,6 +37,9 @@ export default function App() {
   }
   if (route === 'donate') {
     return <Donate />;
+  }
+  if (route === 'admin') {
+    return <AdminDashboard />;
   }
   return <Home />;
 }
