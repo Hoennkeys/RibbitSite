@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/Hoennkeys/RibbitSite#readme",
   "dependencies": {
+    "@supabase/supabase-js": "^2.110.1",
     "framer-motion": "^12.42.2",
     "lottie-web": "^5.13.0",
     "react": "^19.2.7",

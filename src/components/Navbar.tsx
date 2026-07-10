@@ -139,6 +139,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onCtaClick }) => {
           >
             {t('navbar.download')}
           </button>
+          <a 
+            href="#admin" 
+            className="hover:text-primary transition-colors py-2 border-b-[3px] border-transparent hover:border-emerald-500 text-emerald-600 font-extrabold" 
+            aria-label="Acessar o painel administrativo"
+          >
+            Admin
+          </a>
         </nav>
 
         {/* Botão de Menu Hambúrguer Mobile */}
@@ -204,6 +211,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onCtaClick }) => {
               >
                 {t('navbar.download')}
               </button>
+              <a 
+                href="#admin" 
+                onClick={() => setIsMenuOpen(false)}
+                className="hover:text-primary py-2 pl-3 border-l-4 border-transparent hover:border-primary text-emerald-600 font-extrabold"
+                aria-label="Acessar o painel administrativo"
+              >
+                Admin
+              </a>
             </nav>
           </div>
         )}
