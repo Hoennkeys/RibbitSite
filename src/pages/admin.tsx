@@ -95,12 +95,30 @@ export const AdminDashboard: React.FC = () => {
       // 1. Fetch pending observations
       const { data: obsData, error: obsErr } = await supabase
         .from('observations')
-        .select('*, profiles:usuario_id(full_name, avatar_url)')
+        .select('*')
         .eq('status_revisao', 'pendente')
         .order('created_at', { ascending: false });
 
       if (obsErr) throw obsErr;
-      setObservations(obsData || []);
+
+      let finalObs = obsData || [];
+      if (finalObs.length > 0) {
+        const userIds = Array.from(new Set(finalObs.map(o => o.usuario_id).filter(Boolean)));
+        if (userIds.length > 0) {
+          const { data: profilesData, error: profErr } = await supabase
+            .from('profiles')
+            .select('id, full_name, avatar_url')
+            .in('id', userIds);
+          
+          if (!profErr && profilesData) {
+            finalObs = finalObs.map(o => ({
+              ...o,
+              profiles: profilesData.find(p => p.id === o.usuario_id) || undefined
+            }));
+          }
+        }
+      }
+      setObservations(finalObs);
 
       // 2. Fetch species catalog
       const { data: specData, error: specErr } = await supabase
